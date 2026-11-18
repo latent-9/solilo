@@ -13,14 +13,13 @@
   ],
   "license": "MIT",
   "author": "latent-9",
-  "homepage": "https://github.com/latent-9/asciiary/tree/main/mcp#readme",
+  "homepage": "https://github.com/latent-9/solilo#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/latent-9/asciiary.git",
-    "directory": "mcp"
+    "url": "git+https://github.com/latent-9/solilo.git"
   },
   "bugs": {
-    "url": "https://github.com/latent-9/asciiary/issues"
+    "url": "https://github.com/latent-9/solilo/issues"
   },
   "type": "module",
   "engines": {
