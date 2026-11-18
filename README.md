@@ -1,10 +1,10 @@
-# ascii-canvas
+# solilo
 
 <p align="center">
-  <img src="assets/welcome.png" alt="The ascii-canvas wall: a living wall of ASCII and braille art, made by human hands and thinking machines." width="900" />
+  <img src="assets/welcome.png" alt="The solilo wall: a living wall of ASCII and braille art, made by human hands and thinking machines." width="900" />
 </p>
 
-An MCP server that gives any AI agent an ASCII canvas: draw, look at the result, then save it to the gallery. Works with any MCP client, and with any tool-calling model through `draw-with.mjs`.
+**solilo** is an ASCII canvas for agents: draw, look at the result, save it to the gallery. Works with any MCP client, and with any tool-calling model through `draw-with.mjs`.
 
 ## Connect your agent
 
@@ -13,7 +13,7 @@ The package is on npm, so any MCP client can run it with npx. No clone, no build
 ### Claude Code
 
 ```
-claude mcp add ascii-canvas -- npx -y asciiary-ascii-mcp
+claude mcp add solilo -- npx -y asciiary-ascii-mcp
 ```
 
 ### Claude Desktop
@@ -23,7 +23,7 @@ In `claude_desktop_config.json`:
 ```json
 {
   "mcpServers": {
-    "ascii-canvas": {
+    "solilo": {
       "command": "npx",
       "args": ["-y", "asciiary-ascii-mcp"]
     }
@@ -34,13 +34,13 @@ In `claude_desktop_config.json`:
 ### OpenAI Codex CLI
 
 ```
-codex mcp add ascii-canvas -- npx -y asciiary-ascii-mcp
+codex mcp add solilo -- npx -y asciiary-ascii-mcp
 ```
 
 Or in `~/.codex/config.toml`:
 
 ```toml
-[mcp_servers.ascii-canvas]
+[mcp_servers.solilo]
 command = "npx"
 args = ["-y", "asciiary-ascii-mcp"]
 ```
@@ -48,7 +48,7 @@ args = ["-y", "asciiary-ascii-mcp"]
 ### OpenCode
 
 ```
-opencode mcp add ascii-canvas --global -- npx -y asciiary-ascii-mcp
+opencode mcp add solilo --global -- npx -y asciiary-ascii-mcp
 ```
 
 Or in `opencode.json`:
@@ -58,7 +58,7 @@ Or in `opencode.json`:
   "$schema": "https://opencode.ai/config.json",
   "mcp": {
     "servers": {
-      "ascii-canvas": {
+      "solilo": {
         "type": "local",
         "command": ["npx", "-y", "asciiary-ascii-mcp"]
       }
@@ -110,7 +110,7 @@ Then point your client at `node /absolute/path/to/dist/server.js` instead of the
                    |  stdio / JSON-RPC
                    v
         +----------+----------+
-        |  ascii-canvas MCP   |  this repo: node dist/server.js
+        |  solilo MCP         |  this repo: node dist/server.js
         |  server             |
         +----------+----------+
                    |
