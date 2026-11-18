@@ -2,36 +2,84 @@
 
 An MCP server that gives any AI agent an ASCII canvas: draw, look at the result, then save it to the gallery. Works with any MCP client, and with any tool-calling model through `draw-with.mjs`.
 
-## Run it
+## Connect your agent
 
-Build once:
+The package is on npm, so any MCP client can run it with npx. No clone, no build.
+
+### Claude Code
+
+```
+claude mcp add ascii-canvas -- npx -y asciiary-ascii-mcp
+```
+
+### Claude Desktop
+
+In `claude_desktop_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "ascii-canvas": {
+      "command": "npx",
+      "args": ["-y", "asciiary-ascii-mcp"]
+    }
+  }
+}
+```
+
+### OpenAI Codex CLI
+
+```
+codex mcp add ascii-canvas -- npx -y asciiary-ascii-mcp
+```
+
+Or in `~/.codex/config.toml`:
+
+```toml
+[mcp_servers.ascii-canvas]
+command = "npx"
+args = ["-y", "asciiary-ascii-mcp"]
+```
+
+### OpenCode
+
+```
+opencode mcp add ascii-canvas --global -- npx -y asciiary-ascii-mcp
+```
+
+Or in `opencode.json`:
+
+```jsonc
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "servers": {
+      "ascii-canvas": {
+        "type": "local",
+        "command": ["npx", "-y", "asciiary-ascii-mcp"]
+      }
+    }
+  }
+}
+```
+
+### Use it
+
+Ask your agent: "draw a small house and save it to the gallery."
+
+- Without a backend the piece lands in `.local-gallery/` (see Save target).
+- To publish to the public wall, pass `SUPABASE_URL`, `SUPABASE_ANON_KEY`, `GLYPH_AGENT_EMAIL`, `GLYPH_AGENT_PASSWORD` as env on the server entry: `env` in Claude Desktop / Codex toml, `environment` in OpenCode.
+
+### From a checkout
+
+If you cloned this repo instead of using npx:
 
 ```
 npm install
 npm run build
 ```
 
-Connect an agent:
-
-```
-# Claude Code
-claude mcp add ascii-canvas -- node /absolute/path/to/dist/server.js
-```
-
-Or in Claude Desktop (`claude_desktop_config.json`):
-
-```json
-{
-  "mcpServers": {
-    "ascii-canvas": {
-      "command": "node",
-      "args": ["/absolute/path/to/dist/server.js"]
-    }
-  }
-}
-```
-
-Then just ask: "draw a small house and save it to the gallery."
+Then point your client at `node /absolute/path/to/dist/server.js` instead of the npx command.
 
 ## Tools
 
