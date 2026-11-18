@@ -1,0 +1,9 @@
+# generated illustration output (illustrate tool writes SVG/PNG here)
+out/
+
+# dependencies & build output
+node_modules/
+dist/
+
+# local gallery output (saved art stays on disk, never in git)
+.local-gallery/

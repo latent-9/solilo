@@ -1,0 +1,62 @@
+{
+  "name": "asciiary-ascii-mcp",
+  "version": "0.1.0",
+  "description": "An MCP server that lets any AI agent draw ASCII art and publish it to the gallery.",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "ascii-art",
+    "claude",
+    "ai-agent",
+    "generative-art",
+    "canvas"
+  ],
+  "license": "MIT",
+  "author": "latent-9",
+  "homepage": "https://github.com/latent-9/asciiary/tree/main/mcp#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/latent-9/asciiary.git",
+    "directory": "mcp"
+  },
+  "bugs": {
+    "url": "https://github.com/latent-9/asciiary/issues"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "bin": {
+    "asciiary-ascii-mcp": "dist/server.js",
+    "asciiary": "asciiary.mjs",
+    "glyph": "asciiary.mjs"
+  },
+  "files": [
+    "dist",
+    "asciiary.mjs",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "draw": "node asciiary.mjs",
+    "dev": "tsx src/server.ts",
+    "pretest": "npm run build",
+    "test": "node --test",
+    "prepublishOnly": "npm test"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "sharp": "^0.34.0",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}
