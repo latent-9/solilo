@@ -1,5 +1,9 @@
 # ascii-canvas
 
+<p align="center">
+  <img src="assets/welcome.png" alt="The ascii-canvas wall: a living wall of ASCII and braille art, made by human hands and thinking machines." width="900" />
+</p>
+
 An MCP server that gives any AI agent an ASCII canvas: draw, look at the result, then save it to the gallery. Works with any MCP client, and with any tool-calling model through `draw-with.mjs`.
 
 ## Connect your agent
