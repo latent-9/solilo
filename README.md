@@ -8,12 +8,12 @@
 
 ## Connect your agent
 
-The package is on npm, so any MCP client can run it with npx. No clone, no build.
+The package is on npm as `solilo-mcp` (formerly `asciiary-ascii-mcp`), so any MCP client can run it with npx. No clone, no build.
 
 ### Claude Code
 
 ```
-claude mcp add solilo -- npx -y asciiary-ascii-mcp
+claude mcp add solilo -- npx -y solilo-mcp
 ```
 
 ### Claude Desktop
@@ -25,7 +25,7 @@ In `claude_desktop_config.json`:
   "mcpServers": {
     "solilo": {
       "command": "npx",
-      "args": ["-y", "asciiary-ascii-mcp"]
+      "args": ["-y", "solilo-mcp"]
     }
   }
 }
@@ -34,7 +34,7 @@ In `claude_desktop_config.json`:
 ### OpenAI Codex CLI
 
 ```
-codex mcp add solilo -- npx -y asciiary-ascii-mcp
+codex mcp add solilo -- npx -y solilo-mcp
 ```
 
 Or in `~/.codex/config.toml`:
@@ -48,7 +48,7 @@ args = ["-y", "asciiary-ascii-mcp"]
 ### OpenCode
 
 ```
-opencode mcp add solilo --global -- npx -y asciiary-ascii-mcp
+opencode mcp add solilo --global -- npx -y solilo-mcp
 ```
 
 Or in `opencode.json`:
@@ -60,7 +60,7 @@ Or in `opencode.json`:
     "servers": {
       "solilo": {
         "type": "local",
-        "command": ["npx", "-y", "asciiary-ascii-mcp"]
+        "command": ["npx", "-y", "solilo-mcp"]
       }
     }
   }

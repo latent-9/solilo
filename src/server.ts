@@ -126,7 +126,7 @@ async function publishRemote(
 // One active canvas per server process.
 const canvas = new AsciiCanvas();
 
-const server = new McpServer({ name: "ascii-canvas", version: "0.1.0" });
+const server = new McpServer({ name: "solilo", version: "0.1.0" });
 
 // The MCP client that connected (e.g. "claude-ai", "Claude Code", "Cursor"),
 // reported in the initialize handshake. Used to attribute agent-drawn pieces to
